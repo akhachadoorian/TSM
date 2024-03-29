@@ -84,5 +84,5 @@ The function uses a loop to travel the path while adding the cost of traveling f
 Once the entire route has been traversed, the distance is returned.  
 
 ## Sources
-[Brute Force Algorithm Reference](https://www.guru99.com/travelling-salesman-problem.html)
-[Nearest Neighbor Algorithm Reference](https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_travelling_salesman_problem.htm)
+* [Brute Force Algorithm Reference](https://www.guru99.com/travelling-salesman-problem.html)
+* [Nearest Neighbor Algorithm Reference](https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_travelling_salesman_problem.htm)

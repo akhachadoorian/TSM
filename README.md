@@ -13,13 +13,12 @@
 ###### This C++ code consists of three different algorithms that solve the Traveling Salesman problem. These algorithms include a Brute Force Algorithm, a Nearest Neighbor Algorithm, and an original algorithm. These algorithms are implemented in a single file where the desired algorithm or algorithms can be selected for execution.I made a few assumptions: nodes are labeled in numarical order starting at 0, no nodes were named the same, and that the graph was undirected and complete.
 
 ## Setup
-    To use my C++ file, two variables must be specified at the start of the file. 
-        * The first variable is a string that holds the input file name for the triangle matrix, and the second variable is an enumerated variable used to specify the algorithm or algorithms. 
-        * The enumerated variable can be set to “all” (meaning all algorithms calculated), brute (only brute force method calculated), “neighbor” (only nearest neighbor algorithm used), “mine” (only my swapping implementaFon is used), and “neighborMine” (to calculate using the nearest neighbor and my implementaFon). 
-    
-    For the input file to be read correctly, it must have the triangular matrix with no addiFonal whitespace at the end of the file.
-
-    Compile: g++ TSM_AK.cpp
+###### To use my C++ file, two variables must be specified at the start of the file. 
+###### - The first variable is a string that holds the input file name for the triangle matrix, and the second variable is an enumerated variable used to specify the algorithm or algorithms. 
+###### - The enumerated variable can be set to “all” (meaning all algorithms calculated), brute (only brute force method calculated), “neighbor” (only nearest neighbor algorithm used), “mine” (only my swapping implementaFon is used), and “neighborMine” (to calculate using the nearest neighbor and my implementaFon). 
+###### For the input file to be read correctly, it must have the triangular matrix with no addiFonal whitespace at the end of the file.
+###### Compile: 
+    g++ TSM_AK.cpp
 
 ## Algorithms
 
@@ -45,5 +44,17 @@
     The findPathViaSwapping, recursiveSwapping, findNumChanges, findAndSwap, and totalCosts functions implement my orginal solution.
 
 ##### findPathViaSwapping
+The findPathViaSwapping function is the central part of my algorithm (see figure 7). The function has 3 parameters: a two-dimensional vector holding the augmented matrix, a reference to a vector, and the total number of nodes. The function returns the path's cost and updates the referenced vector to hold the shortest path. The findPathViaSwapping function starts by filling 3 vectors, 2 local and the parameter vectors, with nodes in numerical order. Then, variables to hold the current and minimum costs are set up. Using the findNumChanges function, the number of swaps that result in a negative change in distance, with zero being the current node, is found, so we know how many loops need to occur to test all the swaps. Within this loop, the path vector is reset to try a new swap, and the findAndSwap function is called to apply the swap associated with the loop number (ex: if loop = 2, it applies the swap that is found after 2 possible negative changes in distance). Once the swap has occurred, the total cost is calculated using the totalCost function. This cost is compared against the stored minimum cost, and if the minimum cost is greater than the new cost, the minimum cost and minimum path are updated to the current cost and path. Then, the recursiveSwapping function is called to repeat a similar process with the remaining path nodes. Once the loop is exited, the path vector is cleared and updated to hold the minimum path. The minimum cost associated with this path is returned. 
+
+##### recursiveSwapping
+The recursiveSwapping function has five parameters: a two-dimensional vector holding the augmented matrix, a reference to a path within a vector, the current node, a reference to the minimum path, and a pointer to the minimum cost (see figure 8). The function does not return any values; instead, the minimum path and minimum cost variables are updated during the execution. The recursiveSwapping function applies a process similar to the findPathViaSwapping function but with nodes other than the starting node. The function starts by finding the number of possible changes at the current node. A loop is then implemented to occur until the number of potential changes is reached. Within the loop, the swap occurs using the findAndSwap function, and the new cost is calculated using the totalCost function. This new cost is compared against the minimum cost, and if the minimum cost is greater than the new cost, the minimum cost and minimum path are updated. Once the loop is exited, the current node value is incremented, and if there are still more changes that can occur, the function is recursively called again for the new current node. Otherwise, the function is returned. 
+##### findNumChanges
+The findNumChanges function has three parameters: a two-dimensional vector holding the augmented matrix, a path vector, and the current node. The function starts by setting up a counter (see figure 9). The findNumChanges function then loops through all the nodes in the path that can be swapped (which is the path size minus 2). In this loop, the distance change is calculated by subtracting the current distance from the new distance. The current and new distances were computed using the general formulas discussed previously. If the subtraction results in a negative value, the counter is incremented. Once the loop has been completed, the counter variable is returned. 
+##### findAndSwap
+The findAndSwap function has the augmented matrix, a reference to the path vector, the current node, and a number representing which swap as parameters. The function does not return a value. Instead, it updates the path vector that was passed as a parameter (see figure 10). The findAndSwap function starts by setting up a counter to count the number of negative changes in distances to ensure the correct swap occurs. Then, the function loops through all swappable nodes (path size minus 2) while calculating the change in distance using the same formulas as the findNumOfChanges function. If a negative change in distance is found, it must be checked to confirm it's the correct swap by comparing it to the value passed in as a parameter. If it is not the right swap, the counter is incremented. Otherwise, the values are swapped within the path vector, and the function returns. 
+##### totalCosts
+The totalCost function takes two parameters: an augmented matrix within a two-dimensional vector and a vector holding a path (see figure 11). The function uses a loop to travel the path while adding the cost of traveling from the current node to the concurrent node. Once the entire route has been traversed, the distance is returned.  
 
 ## Sources
+Brute Force Algorithm Reference: https://www.guru99.com/travelling-salesman-problem.html
+Nearest Neighbor Algorithm Reference: https://www.tutorialspoint.com/design_and_analysis_of_algorithms/design_and_analysis_of_algorithms_travelling_salesman_problem.htm

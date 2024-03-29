@@ -46,11 +46,11 @@ The concept behind my algorithm started with the idea of swapping nodes within t
 
 #### The Code Implementation
 The findPathViaSwapping, recursiveSwapping, findNumChanges, findAndSwap, and totalCosts functions implement my orginal solution.
+The findPathViaSwapping function is the central part of my algorithm and the other functions are helpers.
 
 ##### findPathViaSwapping
-The findPathViaSwapping function is the central part of my algorithm.
-
 The function has 3 parameters: a two-dimensional vector holding the augmented matrix, a reference to a vector, and the total number of nodes. 
+
 The function returns the path's cost and updates the referenced vector to hold the shortest path. 
 
 The findPathViaSwapping function starts by filling 3 vectors, 2 local and the parameter vectors, with nodes in numerical order. Then, variables to hold the current and minimum costs are set up. Using the findNumChanges function, the number of swaps that result in a negative change in distance, with zero being the current node, is found, so we know how many loops need to occur to test all the swaps. Within this loop, the path vector is reset to try a new swap, and the findAndSwap function is called to apply the swap associated with the loop number (ex: if loop = 2, it applies the swap that is found after 2 possible negative changes in distance). Once the swap has occurred, the total cost is calculated using the totalCost function. This cost is compared against the stored minimum cost, and if the minimum cost is greater than the new cost, the minimum cost and minimum path are updated to the current cost and path. Then, the recursiveSwapping function is called to repeat a similar process with the remaining path nodes. Once the loop is exited, the path vector is cleared and updated to hold the minimum path. The minimum cost associated with this path is returned. 

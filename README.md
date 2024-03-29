@@ -10,7 +10,7 @@
 * [Sources](#sources) 
 
 ## Overview
-### This C++ code consists of three different algorithms that solve the Traveling Salesman problem. These algorithms include a Brute Force Algorithm, a Nearest Neighbor Algorithm, and an original algorithm. These algorithms are implemented in a single file where the desired algorithm or algorithms can be selected for execution.I made a few assumptions: nodes are labeled in numarical order starting at 0, no nodes were named the same, and that the graph was undirected and complete.
+###### This C++ code consists of three different algorithms that solve the Traveling Salesman problem. These algorithms include a Brute Force Algorithm, a Nearest Neighbor Algorithm, and an original algorithm. These algorithms are implemented in a single file where the desired algorithm or algorithms can be selected for execution.I made a few assumptions: nodes are labeled in numarical order starting at 0, no nodes were named the same, and that the graph was undirected and complete.
 
 ## Setup
     To use my C++ file, two variables must be specified at the start of the file. 

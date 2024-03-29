@@ -1,7 +1,8 @@
 # Traveling Salesman Project 1 
 
 ## Table of Contents:
-* [Overview](#overview)
+* [Overview]
+*
 
 ## Overview
 

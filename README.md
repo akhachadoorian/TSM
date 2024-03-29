@@ -2,9 +2,12 @@
 
 ## Table of Contents:
 * [Overview](#overview)
-* [Setup] (#setup)
-* [Algorithms] (#algorithms)
-*
+* [Setup](#setup)
+* [Algorithms](#algorithms)
+    * [Brute Force Algorithm](#brute-force-algorithm)
+    * [Nearest Neighbor Algorithm](#nearest-neighbor-algorithm)
+    * [Original Algorithm](#original-algorithm)
+* [Sources](#sources) 
 
 ## Overview
 
@@ -16,6 +19,6 @@
 
 ### Nearest Neighbor Algorithm
 
-### Original Solution
+### Original Algorithm
 
 ## Sources

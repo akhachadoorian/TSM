@@ -17,8 +17,8 @@
     string fileName = 'filename.txt'
     method calcMethod = emunMethod
 
-###### The first variable is a string that holds the input file name for the triangle matrix, and the second variable is an enumerated variable used to specify the algorithm or algorithms. 
-###### The enumerated variable can be set to “all” (meaning all algorithms calculated), brute (only brute force method calculated), “neighbor” (only nearest neighbor algorithm used), “mine” (only my swapping implementaFon is used), and “neighborMine” (to calculate using the nearest neighbor and my implementaFon). 
+The first variable is a string that holds the input file name for the triangle matrix, and the second variable is an enumerated variable used to specify the algorithm or algorithms. 
+The enumerated variable can be set to “all” (meaning all algorithms calculated), brute (only brute force method calculated), “neighbor” (only nearest neighbor algorithm used), “mine” (only my swapping implementaFon is used), and “neighborMine” (to calculate using the nearest neighbor and my implementaFon). 
 
 ##### For the input file to be read correctly, it must have the triangular matrix with no addiFonal whitespace at the end of the file.
 ##### Compile: 
